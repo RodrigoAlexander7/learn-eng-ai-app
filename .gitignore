@@ -1,0 +1,55 @@
+.DS_Store
+Thumbs.db
+*.log
+*.env
+*.env.local
+*.env.*.local
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+*.pid
+*.seed
+*.bak
+*.swp
+*.swo
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.cache/
+frontend/coverage/
+frontend/dist/
+
+# Next.js build artifacts
+frontend/.next/
+frontend/next-env.d.ts
+
+# Python / FastAPI (backend)
+backend/.venv/
+backend/venv/
+backend/env/
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.coverage
+backend/htmlcov/
+backend/.ruff_cache/
+backend/.tox/
+backend/.idea/
+backend/.vscode/
+
+# Compiled Python files
+backend/**/*.pyc
+backend/**/*.pyo
+backend/**/*.pyd
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+
+# OS files
+ehthumbs.db
+Icon?
