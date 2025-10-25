@@ -1,7 +1,25 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.api.routes import router as api_router
 
-app = FastAPI()
+def create_app() -> FastAPI:
+    app = FastAPI(title="Chrome IA System", version="1.0.0")
 
-@app.get("/")
-def root():
-    return {"Hello": "World"}
+    # CORS settings
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    @app.get("/")
+    async def home():
+        return {"message": "Welcome to the English Tutor System API"}
+
+    app.include_router(api_router, prefix="/api")
+    
+    return app
+
+app = create_app()
