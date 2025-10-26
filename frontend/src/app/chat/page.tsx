@@ -3,11 +3,9 @@
 import ChatRender from "@/features/chat/components/ChatRender";
 
 export default function Chat() {
-
-
    return (
-      <ChatRender>
-
-      </ChatRender>
+      <div className="h-screen w-full flex">
+         <ChatRender />
+      </div>
    );
 }

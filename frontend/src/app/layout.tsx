@@ -27,7 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-row">
         <AppSidebar />
-        {children}
+        <main className="flex-1">
+          {children}
+        </main>
       </body>
     </html>
   );
