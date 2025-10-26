@@ -7,3 +7,7 @@ class ChatResponse(BaseModel):
 
 class ChatInput(BaseModel):
     message: str 
+
+
+class ChatRequest(BaseModel):
+    message: str

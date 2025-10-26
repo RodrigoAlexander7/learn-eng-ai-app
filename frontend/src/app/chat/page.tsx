@@ -1,4 +1,4 @@
-import ChatInput from "@/components/chat/ChatInput"
+import ChatInput from "@/features/chat/components/ChatInput"
 
 export default function Chat() {
    return (
