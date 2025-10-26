@@ -4,7 +4,7 @@ type InputProps = {
 
 export function ChatInputMessage({ inputMessage }: InputProps) {
    return (
-      <div>
+      <div className="">
          {inputMessage}
       </div>
    )
