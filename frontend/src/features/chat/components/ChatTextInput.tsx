@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { getChatResponse } from '@/features/chat/services/chat.service'
 import { useChatStore } from "@/core/store/useChatStore";
+import { InputMessage, OutputMessage, ChatResponse } from "@/types/global";
 
-export default function ChatInput() {
+export default function ChatTextInput() {
    const [message, setMessage] = useState("");
-   const { setChatInput, setChatOutput } = useChatStore()
+   const { messages, addMessage } = useChatStore()
 
    const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
@@ -16,9 +17,17 @@ export default function ChatInput() {
       setMessage("");
 
       // addding request and response to global storage on Zustand 
-      setChatInput(message)
-      const response = await getChatResponse(message)
-      setChatOutput(response)
+      addMessage({
+         type: 'user',
+         input: message
+      } as InputMessage)
+      const response: ChatResponse = await getChatResponse(message)
+
+      addMessage({
+         type: 'model',
+         response: response.response,
+         feedback: response.feedback
+      } as OutputMessage)
       console.log(response)
    };
 

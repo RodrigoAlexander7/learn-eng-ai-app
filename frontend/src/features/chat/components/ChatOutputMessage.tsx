@@ -1,6 +1,6 @@
-import { OutputProps } from "@/types/global"
+import { ChatResponse } from "@/types/global"
 
-export function ChatOutputMessage({ response, feedback }: OutputProps) {
+export function ChatOutputMessage({ response, feedback }: ChatResponse) {
    return (
       <div>
          <div>

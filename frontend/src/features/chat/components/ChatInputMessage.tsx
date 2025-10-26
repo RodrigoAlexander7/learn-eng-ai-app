@@ -1,11 +1,11 @@
 type InputProps = {
-   inputMessage: string;
+   input: string;
 };
 
-export function ChatInputMessage({ inputMessage }: InputProps) {
+export function ChatInputMessage({ input }: InputProps) {
    return (
       <div className="">
-         {inputMessage}
+         {input}
       </div>
    )
 
