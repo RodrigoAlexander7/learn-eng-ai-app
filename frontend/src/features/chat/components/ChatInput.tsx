@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { getChatResponse } from '@/features/chat/services/chat.service'
+import { useChatStore } from "@/core/store/useChatStore";
 
 export default function ChatInput() {
    const [message, setMessage] = useState("");
+   const { setChatInput, setChatOutput } = useChatStore()
 
    const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
@@ -12,8 +14,11 @@ export default function ChatInput() {
       // Aquí puedes manejar el envío del mensaje
       console.log("Mensaje enviado:", message);
       setMessage("");
-      console.log(message)
+
+      // addding request and response to global storage on Zustand 
+      setChatInput(message)
       const response = await getChatResponse(message)
+      setChatOutput(response)
       console.log(response)
    };
 
